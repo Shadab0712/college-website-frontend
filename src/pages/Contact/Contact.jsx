@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './Contact.css';
-import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+import { Form, Button, Card, Container } from 'react-bootstrap';
 
 function Contact() {
     const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +14,7 @@ function Contact() {
         address: '',
         message: ''
     });
-    
+
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState('');
     const [errors, setErrors] = useState({
@@ -119,112 +118,118 @@ function Contact() {
             <hr></hr>
             <hr></hr>
 
-            <div className='container my-5 d-flex justify-content-center'>
-                <Form id='contact-form' onSubmit={handleSubmit}>
-                    <Row className='mb-3'>
-                        <Col sm={12} md={6} className='mb-3 mb-md-0'>
-                            <Form.Label>First Name</Form.Label>
-                            <Form.Control
-                                name='firstName'
-                                placeholder='Enter First name'
-                                value={formData.firstName}
-                                onChange={handleChange}
-                                isInvalid={!!errors.firstName}
-                            />
-                            <Form.Control.Feedback type='invalid'>
-                                {errors.firstName}
-                            </Form.Control.Feedback>
-                        </Col>
-                        <Col sm={12} md={6}>
-                            <Form.Label>Last Name</Form.Label>
-                            <Form.Control
-                                name='lastName'
-                                placeholder='Enter Last name'
-                                value={formData.lastName}
-                                onChange={handleChange}
-                                isInvalid={!!errors.lastName}
-                            />
-                            <Form.Control.Feedback type='invalid'>
-                                {errors.lastName}
-                            </Form.Control.Feedback>
-                        </Col>
-                    </Row>
+            <Container className="my-5">
+                <p className='text-center mb-4'>Please fill out the form below with your details. Once submitted, your information will be sent directly to our college's email, and we will get back to you as soon as possible.</p>
+                <Card>
+                    <div className='container my-5 d-flex justify-content-center'>
+                        <Form id='contact-form' onSubmit={handleSubmit}>
+                            <Row className='mb-3'>
+                                <Col sm={12} md={6} className='mb-3 mb-md-0'>
+                                    <Form.Label><strong>First Name</strong></Form.Label>
+                                    <Form.Control
+                                        name='firstName'
+                                        placeholder='Enter First name'
+                                        value={formData.firstName}
+                                        onChange={handleChange}
+                                        isInvalid={!!errors.firstName}
+                                    />
+                                    <Form.Control.Feedback type='invalid'>
+                                        {errors.firstName}
+                                    </Form.Control.Feedback>
+                                </Col>
+                                <Col sm={12} md={6}>
+                                    <Form.Label><strong>Last Name</strong></Form.Label>
+                                    <Form.Control
+                                        name='lastName'
+                                        placeholder='Enter Last name'
+                                        value={formData.lastName}
+                                        onChange={handleChange}
+                                        isInvalid={!!errors.lastName}
+                                    />
+                                    <Form.Control.Feedback type='invalid'>
+                                        {errors.lastName}
+                                    </Form.Control.Feedback>
+                                </Col>
+                            </Row>
 
-                    <Form.Group className='mb-3'>
-                        <Form.Label>Mobile Number</Form.Label>
-                        <Form.Control
-                            name='mobileNumber'
-                            placeholder='Enter Mobile number'
-                            value={formData.mobileNumber}
-                            onChange={handleChange}
-                            isInvalid={!!errors.mobileNumber}
-                        />
-                        <Form.Control.Feedback type='invalid'>
-                            {errors.mobileNumber}
-                        </Form.Control.Feedback>
-                        <Form.Text className='text-muted'>
-                            We'll never share your Mobile Number with anyone else.
-                        </Form.Text>
-                    </Form.Group>
+                            <Form.Group className='mb-3'>
+                                <Form.Label><strong>Mobile Number</strong></Form.Label>
+                                <Form.Control
+                                    name='mobileNumber'
+                                    placeholder='Enter Mobile number'
+                                    value={formData.mobileNumber}
+                                    onChange={handleChange}
+                                    isInvalid={!!errors.mobileNumber}
+                                />
+                                <Form.Control.Feedback type='invalid'>
+                                    {errors.mobileNumber}
+                                </Form.Control.Feedback>
+                                <Form.Text className='text-muted'>
+                                    We'll never share your Mobile Number with anyone else.
+                                </Form.Text>
+                            </Form.Group>
 
-                    <Form.Group className='mb-3'>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control
-                            type='email'
-                            name='email'
-                            placeholder='Enter email'
-                            value={formData.email}
-                            onChange={handleChange}
-                            isInvalid={!!errors.email}
-                        />
-                        <Form.Control.Feedback type='invalid'>
-                            {errors.email}
-                        </Form.Control.Feedback>
-                        <Form.Text className='text-muted'>
-                            We'll never share your email with anyone else.
-                        </Form.Text>
-                    </Form.Group>
+                            <Form.Group className='mb-3'>
+                                <Form.Label><strong>Email</strong></Form.Label>
+                                <Form.Control
+                                    type='email'
+                                    name='email'
+                                    placeholder='Enter email'
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    isInvalid={!!errors.email}
+                                />
+                                <Form.Control.Feedback type='invalid'>
+                                    {errors.email}
+                                </Form.Control.Feedback>
+                                <Form.Text className='text-muted'>
+                                    We'll never share your email with anyone else.
+                                </Form.Text>
+                            </Form.Group>
 
-                    <Form.Group className='mb-3'>
-                        <Form.Label>Address</Form.Label>
-                        <Form.Control
-                            name='address'
-                            placeholder='Your address'
-                            value={formData.address}
-                            onChange={handleChange}
-                            isInvalid={!!errors.address}
-                        />
-                        <Form.Control.Feedback type='invalid'>
-                            {errors.address}
-                        </Form.Control.Feedback>
-                    </Form.Group>
+                            <Form.Group className='mb-3'>
+                                <Form.Label><strong>Address</strong></Form.Label>
+                                <Form.Control
+                                    name='address'
+                                    placeholder='Your address'
+                                    value={formData.address}
+                                    onChange={handleChange}
+                                    isInvalid={!!errors.address}
+                                />
+                                <Form.Control.Feedback type='invalid'>
+                                    {errors.address}
+                                </Form.Control.Feedback>
+                            </Form.Group>
 
-                    <Form.Group className='mb-3'>
-                        <Form.Label>Your Message</Form.Label>
-                        <Form.Control
-                            as="textarea"
-                            rows={4}
-                            name='message'
-                            value={formData.message}
-                            onChange={handleChange}
-                            isInvalid={!!errors.message}
-                        />
-                        <Form.Control.Feedback type='invalid'>
-                            {errors.message}
-                        </Form.Control.Feedback>
-                    </Form.Group>
+                            <Form.Group className='mb-3'>
+                                <Form.Label><strong>Your Message</strong></Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    rows={4}
+                                    name='message'
+                                    value={formData.message}
+                                    placeholder='Enter any query'
+                                    onChange={handleChange}
+                                    isInvalid={!!errors.message}
+                                />
+                                <Form.Control.Feedback type='invalid'>
+                                    {errors.message}
+                                </Form.Control.Feedback>
+                            </Form.Group>
 
-                    <Button variant="danger btn-lg" type='submit' disabled={isLoading}>
-                        {isLoading ? 'Submitting...' : 'Submit'}
-                    </Button>
-                    {error && <div className='text-danger mt-3'>{error}</div>}
-                </Form>
-                {isLoading && (
-                    <div className='loading-overlay'>
-                        <div className='spinner'></div>
+                            <Button variant="primary" className="d-flex justify-content-center mx-auto" type='submit' disabled={isLoading}>
+                                {isLoading ? 'Submitting...' : 'Submit'}
+                            </Button>
+                            {error && <div className='text-danger mt-3'>{error}</div>}
+                        </Form>
+                        {isLoading && (
+                            <div className='loading-overlay'>
+                                <div className='spinner'></div>
+                            </div>
+                        )}
                     </div>
-                )}
-            </div>
+                </Card>
+            </Container>
             <hr></hr>
         </div>
     );

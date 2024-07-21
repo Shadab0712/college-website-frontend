@@ -23,7 +23,7 @@ const courses = [
         id: 2,
         img: [BusinessCourseImg],
         title: 'Bachelor of Commerce (B.Com)',
-        description: 'It is a popular undergraduate degree in commerce. The BCom course spans three years, divided into six semesters. The scope of a BCom degree is vast and diverse. Its graduates can pursue careers in accounting, finance, banking, and management.',
+        description: 'It is a popular undergraduate degree in commerce. It spans three years, divided into six semesters. The scope of a BCom degree is vast and diverse. Its graduates can pursue careers in accounting, finance, banking, and management.',
         features: [
             <div>
                 <p><strong>( All Subjects ) </strong></p>
@@ -57,13 +57,13 @@ function Courses() {
             <hr></hr>
 
             <div className='container py-5'>
-                <div className='row g-4'>
+                <div className='row g-3'>
                     {courses.map((course) => (
-                        <div key={course.id} className='col-lg-6'>
+                    <div key={course.id} className='col-lg-4'>
                             <Card className='text-white shadow scale-hover-effect'>
                                 <Card.Img src={course.img} />
-                                <Card.ImgOverlay className='d-flex flex-column align-items-center justify-content-center p-md-5'>
-                                    <Card.Title className='fs-2 text-danger'>{course.title}</Card.Title>
+                                <Card.ImgOverlay className='d-flex flex-column align-items-center justify-content-center p-md-8'>
+                                    <Card.Title className='course-heading fs-3 text-bold'>{course.title}</Card.Title>
                                     <Card.Text className='text-center'>{course.description}</Card.Text>
                                     <Card.Text className='text-center'>{course.features}</Card.Text>
                                 </Card.ImgOverlay>

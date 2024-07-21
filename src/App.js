@@ -50,7 +50,7 @@ function App() {
               <Nav.Link href='/courses' className='text-uppercase'>Courses</Nav.Link>
               <Nav.Link href='/about' className='text-uppercase'>About</Nav.Link>
               <Nav.Link href='/contact' className='text-uppercase'>Contact Us</Nav.Link>
-              <Nav.Link href='#' className='text-uppercase d-flex align-items-center' onClick={() => navigate('/admin')}>
+              <Nav.Link href='/admin' className='text-uppercase ' >Admin
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" className="bi bi-person" viewBox="0 0 16 16">
                   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 14s-1 0-1-1 1-4 7-4 7 3 7 4-1 1-1 1H2z" />
                 </svg>
@@ -101,10 +101,10 @@ function App() {
                 <div className='col-12 col-md-6 col-lg-7'>
                   <ul className='list-unstyled mb-0'>
                     <li>
-                      <p><strong>Main Address</strong> - Amarpur (Rajapur Road ) Block-Babina, Jhansi, Uttar Pradesh</p>
+                      <p><strong>Main Address</strong> - Amarpur ( Rajapur Road ) Block-Babina, Jhansi, Uttar Pradesh</p>
                     </li>
                     <li>
-                      <p><strong>Contact Numbers-</strong>
+                      <p><strong>Contact Numbers- </strong>
                         9515135343,
                         9453907214,
                         9721663862,
@@ -114,7 +114,7 @@ function App() {
                       </p>
                     </li>
                     <li>
-                      <p><strong>Email-</strong> alibrahimmahavidhyalaya@gmail.com</p>
+                      <p><strong>Email- </strong> alibrahimmahavidhyalaya@gmail.com</p>
                     </li>
                   </ul>
                 </div>

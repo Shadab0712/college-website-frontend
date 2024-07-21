@@ -1,4 +1,5 @@
 .adminPanel {
+    background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/admin.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,11 +9,11 @@
     font-family: Arial, sans-serif;
 }
 
-/* .adminPanel h1 {
+.adminPanel h1 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
-} */
+}
 
 .buttonContainer {
     display: flex;
@@ -42,9 +43,13 @@
     background-color: #c82333;
 }
 
+.logout-section {
+    margin-bottom: 20px;
+}
+
 .content {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin-top: 20px;
     padding: 20px;
     background-color: #fff;

@@ -1,6 +1,23 @@
+.admin-page header {
+  background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/admin.jpg);
+}
 
-  .admin-icon {
-    margin-left: 10px; /* Adjust as needed for spacing */
-    vertical-align: middle;
-  }
-  
+.admin-icon {
+  margin-left: 20px;
+  /* Adjust as needed for spacing */
+  vertical-align: auto;
+}
+
+.header .container {
+  z-index: 1;
+}
+
+#contact-form {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.margin-top-20 {
+  margin-top: 100px;
+}
