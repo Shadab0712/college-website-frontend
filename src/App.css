@@ -2,7 +2,11 @@
   text-align: center;
 }
 
-h1, h2, h3, p, a {
+h1,
+h2,
+h3,
+p,
+a {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -65,4 +69,11 @@ nav .navbar-toggler:focus {
   header h1 {
     font-size: 2rem;
   }
+}
+
+.logo-image {
+  width: 85px;
+  /* Adjust as needed */
+  height: fit-content;
+  /* Maintain aspect ratio */
 }

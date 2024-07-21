@@ -6,9 +6,3 @@ header {
     background-size: cover;
     background-position: center;
 }
-
-.blog-section {
-    background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/blog-section-img.jpg);
-    background-size: cover;
-    background-position: center;
-}

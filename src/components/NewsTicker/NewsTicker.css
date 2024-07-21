@@ -1,0 +1,46 @@
+.ticker-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    /* Optional: background color */
+}
+
+.news-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    /* Adjust size as needed */
+    font-weight: bold;
+    color: #ff6347;
+    /* Text color (Tomato) */
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 20px;
+    animation: fieryBackground 2s ease infinite;
+}
+
+@keyframes fieryBackground {
+    0% {
+        text-shadow: 0 0 10px #ff6347, 0 0 20px #ffcc00, 0 0 30px #ffd700;
+    }
+
+    50% {
+        text-shadow: 0 0 15px #ff6347, 0 0 25px #ffcc00, 0 0 35px #ffd700;
+    }
+
+    100% {
+        text-shadow: 0 0 10px #ff6347, 0 0 20px #ffcc00, 0 0 30px #ffd700;
+    }
+}
+
+.text-fiery {
+    font-size: 2em;
+    color: #fff;
+    animation: fieryBackground 3s infinite;
+}
+
+
+.news-ticker-section {
+    text-align: center;
+    /* Ensure the parent container is also centered */
+}
