@@ -1,24 +1,12 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NewUpdates from '../../components/NewUpdates/NewUpdate';
 import Admin from './Admin';
-import './AdminPanel.css'; // Add your CSS file here
+import './AdminPanel.css';
 
-function AdminPanel() {
-    const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
+function AdminPanel({ isAdminLoggedIn }) {
     const navigate = useNavigate();
 
-    const handleLogin = (status) => {
-        setIsAdminLoggedIn(status);
-        if (status) {
-            navigate('/adminPanel');
-        } else {
-            navigate('/');
-        }
-    };
-
     const handleLogout = () => {
-        setIsAdminLoggedIn(false);
         navigate('/');
     };
 
@@ -27,7 +15,11 @@ function AdminPanel() {
             {isAdminLoggedIn ? (
                 <NewUpdates isAdminLoggedIn={isAdminLoggedIn} onLogout={handleLogout} />
             ) : (
-                <Admin onLogin={handleLogin} />
+                <Admin onLogin={(status) => {
+                    if (status) {
+                        navigate('/adminPanel');
+                    }
+                }} />
             )}
         </div>
     );

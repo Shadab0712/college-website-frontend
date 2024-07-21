@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,18 +9,22 @@ import Courses from './pages/Courses/Courses';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import LogoImage from './utils/images/College_Logo.jpg';
-import './pages/Admin/Admin.css';
 import Facilities from './pages/Facilities/Facilities';
 import NewUpdates from './components/NewUpdates/NewUpdate';
 import AdminPanel from './pages/Admin/AdminPanel';
 import Admin from './pages/Admin/Admin';
 
 function App() {
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = (status) => {
     setIsLoggedIn(status);
+    if (status) {
+      navigate('/adminPanel');
+    } else {
+      navigate('/');
+    }
   };
 
   return (
@@ -42,11 +46,11 @@ function App() {
           <Navbar.Toggle aria-controls='basic-navbar-nav' className='bg-light' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto justify-content-end w-100'>
-              <Nav.Link as={Link} to='/' className='text-uppercase'>Home</Nav.Link>
-              <Nav.Link as={Link} to='/courses' className='text-uppercase'>Courses</Nav.Link>
-              <Nav.Link as={Link} to='/about' className='text-uppercase'>About</Nav.Link>
-              <Nav.Link as={Link} to='/contact' className='text-uppercase'>Contact Us</Nav.Link>
-              <Nav.Link as={Link} to='/admin' className='text-uppercase d-flex align-items-center'>
+              <Nav.Link href='/' className='text-uppercase'>Home</Nav.Link>
+              <Nav.Link href='/courses' className='text-uppercase'>Courses</Nav.Link>
+              <Nav.Link href='/about' className='text-uppercase'>About</Nav.Link>
+              <Nav.Link href='/contact' className='text-uppercase'>Contact Us</Nav.Link>
+              <Nav.Link href='#' className='text-uppercase d-flex align-items-center' onClick={() => navigate('/admin')}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" className="bi bi-person" viewBox="0 0 16 16">
                   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 14s-1 0-1-1 1-4 7-4 7 3 7 4-1 1-1 1H2z" />
                 </svg>
@@ -62,9 +66,9 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/courses' element={<Courses />} />
         <Route path='/facilities' element={<Facilities />} />
-        <Route path='/admin' element={<Admin onLogin={handleLogin} />} />
-        <Route path='/adminPanel' element={<AdminPanel isAdminLoggedIn={isLoggedIn} />} />
-        <Route path='/update' element={<NewUpdates />} />
+        <Route path="/admin" element={<Admin onLogin={handleLogin} />} />
+        <Route path="/adminPanel" element={<AdminPanel isAdminLoggedIn={isLoggedIn} onLogin={handleLogin} />} />
+        <Route path='/update' element={<NewUpdates isAdminLoggedIn={isLoggedIn} />} />
       </Routes>
 
       <footer>
